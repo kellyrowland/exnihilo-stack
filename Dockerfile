@@ -4,13 +4,10 @@ MAINTAINER Kelly Rowland <kellylynnerowland@gmail.com>
 RUN apt-get update &&\
     apt-get install -y --no-install-recommends apt-utils &&\
     apt-get install -y build-essential &&\
-    apt-get install -y curl &&\
     apt-get install -y wget &&\
-    apt-get install -y swig
-
-# install cmake
-RUN curl -sSL https://cmake.org/files/v3.4/cmake-3.4.0-Linux-x86_64.tar.gz | tar -xzC /opt
-RUN ln -s /opt/cmake-3.4.0-Linux-x86_64/bin/cmake /usr/bin/cmake
+    apt-get install -y swig &&\
+    apt-get install -y libopenmpi-dev &&\
+    apt-get install -y cmake
 
 # build HDF5
 RUN wget https://support.hdfgroup.org/ftp/HDF5/prev-releases/hdf5-1.10/hdf5-1.10.1/src/hdf5-1.10.1.tar.gz 
