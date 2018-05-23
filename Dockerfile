@@ -22,3 +22,5 @@ RUN apt-get -yq autoremove
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# test
+RUN mpicc --version
